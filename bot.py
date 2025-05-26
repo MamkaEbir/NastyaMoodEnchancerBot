@@ -2,19 +2,23 @@ import asyncio
 import json
 import random
 from datetime import datetime
-import os
+
 from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, KeyboardButton, ReplyKeyboardMarkup
 from aiogram.filters import Command
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import pytz
 from dotenv import load_dotenv
+import os
+
 load_dotenv()
 
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID_NASTYA = 813196147
 
+ # Замените на настоящий chat_id Насти
 
-CHAT_ID_NASTYA = int(os.getenv("NASTYA_CHAT_ID"))
-bot = Bot(token=os.getenv("BOT_TOKEN"))
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 morning_messages = [
